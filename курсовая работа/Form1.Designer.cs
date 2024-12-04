@@ -47,7 +47,7 @@ namespace kursovayaGolubev
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(3)))), ((int)(((byte)(110)))));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(44, 90);
+            this.textBox1.Location = new System.Drawing.Point(44, 105);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(215, 20);
             this.textBox1.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace kursovayaGolubev
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(41, 74);
+            this.label1.Location = new System.Drawing.Point(41, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 2;
