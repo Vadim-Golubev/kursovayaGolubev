@@ -57,5 +57,13 @@ namespace курсовая_работа
             users.ShowDialog();
             this.Close();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ImportExport importExport = new ImportExport();
+            this.Visible = false;
+            importExport.ShowDialog();
+            this.Close();
+        }
     }
 }

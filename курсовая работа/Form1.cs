@@ -35,20 +35,32 @@ namespace kursovayaGolubev
         private void button1_Click(object sender, EventArgs e)
         {
             
-            
+            string conString = $@"host=127.0.0.1;uid=root;pwd=root; database = igrovoy_club";
                 string login = textBox1.Text.ToString();
+
+            
+            if (passwd.Text == localAdmin.password && textBox1.Text == localAdmin.login)
+            {
+                this.Hide();
+                ImportExport backup = new ImportExport();
+                data.role = "локальный";
+                backup.Show();
+            }
+            else
+            {
                 string hashPassword = string.Empty;
                 string role = string.Empty;
                 MySqlConnection con = new MySqlConnection(conString);
                 con.Open();
+
 
                 MySqlCommand cmd = new MySqlCommand($"Select * From Users Where Login = '{login}'", con);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                hashPassword = GetHashPass(passwd.Text.ToString());
 
+                hashPassword = GetHashPass(passwd.Text.ToString());
                 if (hashPassword == dt.Rows[0].ItemArray.GetValue(2).ToString())
                 {
                     role = dt.Rows[0].ItemArray.GetValue(3).ToString();
@@ -56,12 +68,13 @@ namespace kursovayaGolubev
                     MessageBox.Show("Вы успешно авторизовались");
                     if (role == "Admin")
                     {
-                    Menushka menushka = new Menushka();
+                        Menushka menushka = new Menushka();
                         this.Visible = false;
-                    menushka.ShowDialog();
+                        menushka.ShowDialog();
                         this.Close();
                     }
                     else if (role == "Manager")
+
                     {
                         Manager manager = new Manager();
                         this.Visible = false;
@@ -74,9 +87,12 @@ namespace kursovayaGolubev
                     }
                 }
                 else
-            {
-                MessageBox.Show("Неверный пароль");
+                {
+                    MessageBox.Show("Неверный пароль");
+                }
+
             }
+            
            
         }
 

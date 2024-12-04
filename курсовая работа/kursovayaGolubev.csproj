@@ -81,7 +81,13 @@
     <Compile Include="Games.Designer.cs">
       <DependentUpon>Games.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs" />
+    <Compile Include="ImportExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportExport.Designer.cs">
+      <DependentUpon>ImportExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="localAdmin.cs" />
     <Compile Include="Menushka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Games.resx">
       <DependentUpon>Games.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportExport.resx">
+      <DependentUpon>ImportExport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menushka.resx">
       <DependentUpon>Menushka.cs</DependentUpon>
